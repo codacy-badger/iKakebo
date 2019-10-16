@@ -7,6 +7,7 @@ import com.bumptech.glide.request.RequestOptions
 import dagger.Module
 import dagger.Provides
 import eu.mmassi.expensesmanager.R
+import javax.inject.Singleton
 
 @Module
 class AppModule {
@@ -14,15 +15,15 @@ class AppModule {
     @Module
     companion object {
 
-        @JvmStatic @Provides
+        @Singleton @JvmStatic @Provides
         fun providesRequestOptions() =
             RequestOptions().placeholder(R.drawable.white_background).error(R.drawable.white_background)
 
-        @JvmStatic @Provides
+        @Singleton @JvmStatic @Provides
         fun providesRequestManager(application: Application, requestOptions: RequestOptions) =
             Glide.with(application).setDefaultRequestOptions(requestOptions)
 
-        @JvmStatic @Provides
+        @Singleton @JvmStatic @Provides
         fun providesAppDrawable(application: Application) =
             ContextCompat.getDrawable(application, R.drawable.logo)!!
     }

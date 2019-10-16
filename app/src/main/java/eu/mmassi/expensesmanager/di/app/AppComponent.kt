@@ -6,11 +6,14 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import eu.mmassi.expensesmanager.ExpensesManagerApplication
+import javax.inject.Singleton
 
+@Singleton
 @Component(modules = [
     AndroidSupportInjectionModule::class,
     ActivityBuildersModule::class,
-    AppModule::class
+    AppModule::class,
+    ViewModelFactoryModule::class
 ])
 interface AppComponent: AndroidInjector<ExpensesManagerApplication> {
 

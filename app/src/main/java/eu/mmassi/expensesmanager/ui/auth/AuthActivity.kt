@@ -9,9 +9,9 @@ import dagger.android.support.DaggerAppCompatActivity
 import eu.mmassi.expensesmanager.R
 import eu.mmassi.expensesmanager.di.app.ViewModelProviderFactory
 import eu.mmassi.expensesmanager.ui.main.MainActivity
+import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_auth.login_button
 import kotlinx.android.synthetic.main.activity_auth.login_logo
-import javax.inject.Inject
 
 class AuthActivity : DaggerAppCompatActivity() {
 

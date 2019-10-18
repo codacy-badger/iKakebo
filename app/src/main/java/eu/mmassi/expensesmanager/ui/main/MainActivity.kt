@@ -15,18 +15,13 @@ import kotlinx.android.synthetic.main.activity_main.nav_view
 class MainActivity : DaggerAppCompatActivity() {
 
     @Inject
-    lateinit var
-        viewModelProviderFactory:
-                                ViewModelProviderFactory
+    lateinit var viewModelProviderFactory: ViewModelProviderFactory
 
         private lateinit var mainViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        if (true)
-                print("x")
 
         mainViewModel = ViewModelProviders.of(this, viewModelProviderFactory).get(MainViewModel::class.java)
 

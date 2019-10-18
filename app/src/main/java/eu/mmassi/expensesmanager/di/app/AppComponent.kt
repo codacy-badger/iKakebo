@@ -15,7 +15,7 @@ import javax.inject.Singleton
     AppModule::class,
     ViewModelFactoryModule::class
 ])
-interface AppComponent: AndroidInjector<ExpensesManagerApplication> {
+interface AppComponent : AndroidInjector<ExpensesManagerApplication> {
 
     @Component.Builder
     interface Builder {

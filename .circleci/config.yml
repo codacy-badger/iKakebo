@@ -22,7 +22,7 @@ jobs:
           command: ./gradlew ktlintCheck lint
       - run:
           name: Run Tests
-          command: ./gradlew connectedCheck
+          command: ./gradlew test
       - run:
           name: Upload coverage data
           command: bash <(curl -s https://codecov.io/bash)

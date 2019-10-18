@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/navigation_fragment1"
-        android:name="eu.mmassi.expensesmanager.Fragment1"
+        android:name="eu.mmassi.expensesmanager.ui.main.Fragment1"
         android:label="@string/hello_blank_fragment1"
         tools:layout="@layout/fragment_fragment1" />
     <fragment
         android:id="@+id/navigation_fragment2"
-        android:name="eu.mmassi.expensesmanager.Fragment2"
+        android:name="eu.mmassi.expensesmanager.ui.main.Fragment2"
         android:label="@string/hello_blank_fragment2"
         tools:layout="@layout/fragment_fragment2" />
 </navigation>

@@ -11,18 +11,18 @@ jobs:
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: Download Dependencies
+          name: Download dependencies
           command: ./gradlew androidDependencies
       - save_cache:
           paths:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: Run lint
+          name: Run linters
           command: ./gradlew ktlintCheck lint
       - run:
-          name: Run Tests
-          command: ./gradlew test
+          name: Run unit tests and generate coverage report
+          command: ./gradlew jacocoTestReport
       - run:
           name: Upload coverage data
           command: bash <(curl -s https://codecov.io/bash)

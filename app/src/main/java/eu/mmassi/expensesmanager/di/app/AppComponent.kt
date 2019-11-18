@@ -6,6 +6,7 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import eu.mmassi.expensesmanager.ExpensesManagerApplication
+import eu.mmassi.expensesmanager.SessionManager
 import javax.inject.Singleton
 
 @Singleton
@@ -17,11 +18,13 @@ import javax.inject.Singleton
 ])
 interface AppComponent : AndroidInjector<ExpensesManagerApplication> {
 
+    val sessionManager: SessionManager
+
     @Component.Builder
     interface Builder {
 
         @BindsInstance
-        fun application(application: Application): Builder
+        fun bindApplication(application: Application): Builder
 
         fun build(): AppComponent
     }

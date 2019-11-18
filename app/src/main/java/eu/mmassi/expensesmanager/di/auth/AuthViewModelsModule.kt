@@ -8,8 +8,9 @@ import eu.mmassi.expensesmanager.di.app.ViewModelKey
 import eu.mmassi.expensesmanager.ui.auth.AuthViewModel
 
 @Module
-abstract class AuthViewModelModule {
+abstract class AuthViewModelsModule {
 
+    @AuthScope
     @Binds
     @IntoMap
     @ViewModelKey(AuthViewModel::class)

@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
@@ -21,7 +20,7 @@
         app:layout_constraintTop_toBottomOf="@+id/login_logo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:hint="User id"
+        android:hint="@string/user_id"
         android:textColor="#000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +35,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/login_button"
         android:layout_marginTop="15dp"
-        android:text="Login"/>
+        android:text="@string/login"/>
 
     <ProgressBar
         app:layout_constraintTop_toTopOf="parent"

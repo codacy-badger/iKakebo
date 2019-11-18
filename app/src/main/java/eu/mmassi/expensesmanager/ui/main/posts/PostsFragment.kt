@@ -1,21 +1,23 @@
 package eu.mmassi.expensesmanager.ui.main.posts
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
-import dagger.android.support.DaggerFragment
 
 import eu.mmassi.expensesmanager.R
 import eu.mmassi.expensesmanager.di.app.ViewModelProviderFactory
 import eu.mmassi.expensesmanager.models.Resource
+import eu.mmassi.expensesmanager.ui.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_posts.recycler_view
 import javax.inject.Inject
 
-class PostsFragment : DaggerFragment() {
+class PostsFragment : Fragment() {
 
     @Inject
     lateinit var viewModelProviderFactory: ViewModelProviderFactory
@@ -24,6 +26,12 @@ class PostsFragment : DaggerFragment() {
     lateinit var postsRecyclerAdapter: PostsRecyclerAdapter
 
     private lateinit var postsViewModel: PostsViewModel
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        (context as MainActivity).mainComponent.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

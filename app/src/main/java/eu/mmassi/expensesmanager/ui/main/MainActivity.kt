@@ -10,6 +10,8 @@ import androidx.navigation.ui.NavigationUI.*
 import androidx.navigation.ui.setupActionBarWithNavController
 import eu.mmassi.expensesmanager.BaseActivity
 import eu.mmassi.expensesmanager.R
+import eu.mmassi.expensesmanager.appComponent
+import eu.mmassi.expensesmanager.di.app.MainComponent
 import eu.mmassi.expensesmanager.di.app.ViewModelProviderFactory
 import kotlinx.android.synthetic.main.activity_main.drawer_layout
 import kotlinx.android.synthetic.main.activity_main.nav_view
@@ -20,10 +22,16 @@ class MainActivity : BaseActivity() {
     @Inject
     lateinit var viewModelProviderFactory: ViewModelProviderFactory
 
+    val mainComponent: MainComponent by lazy {
+        appComponent.mainComponent().create()
+    }
+
     private val navController
         get() = findNavController(R.id.nav_host_fragment)
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        mainComponent.inject(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 

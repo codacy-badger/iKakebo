@@ -1,11 +1,16 @@
 package eu.mmassi.expensesmanager
 
-import dagger.android.AndroidInjector
-import dagger.android.support.DaggerApplication
+import android.app.Activity
+import android.app.Application
+import eu.mmassi.expensesmanager.di.app.AppComponent
 import eu.mmassi.expensesmanager.di.app.DaggerAppComponent
 
-class ExpensesManagerApplication : DaggerApplication() {
+class ExpensesManagerApplication : Application() {
 
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> =
+    val appComponent: AppComponent by lazy {
         DaggerAppComponent.builder().bindApplication(this).build()
+    }
 }
+
+val Activity.appComponent: AppComponent
+    get() = (application as ExpensesManagerApplication).appComponent

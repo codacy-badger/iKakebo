@@ -3,13 +3,13 @@ package eu.mmassi.expensesmanager
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
-import dagger.android.support.DaggerAppCompatActivity
 import eu.mmassi.expensesmanager.ui.auth.AuthActivity
 import eu.mmassi.expensesmanager.ui.auth.AuthState
 import javax.inject.Inject
 
-abstract class BaseActivity : DaggerAppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity() {
 
     @Inject
     lateinit var sessionManager: SessionManager

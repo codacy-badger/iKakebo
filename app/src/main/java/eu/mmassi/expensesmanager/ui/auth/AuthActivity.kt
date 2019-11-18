@@ -7,10 +7,11 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
 import com.bumptech.glide.RequestManager
-import dagger.android.support.DaggerAppCompatActivity
 import eu.mmassi.expensesmanager.R
+import eu.mmassi.expensesmanager.appComponent
 import eu.mmassi.expensesmanager.di.app.ViewModelProviderFactory
 import eu.mmassi.expensesmanager.ui.main.MainActivity
 import javax.inject.Inject
@@ -19,7 +20,7 @@ import kotlinx.android.synthetic.main.activity_auth.login_logo
 import kotlinx.android.synthetic.main.activity_auth.progress_bar
 import kotlinx.android.synthetic.main.activity_auth.user_id_input
 
-class AuthActivity : DaggerAppCompatActivity() {
+class AuthActivity : AppCompatActivity() {
 
     @Inject
     lateinit var viewModelProviderFactory: ViewModelProviderFactory
@@ -33,6 +34,8 @@ class AuthActivity : DaggerAppCompatActivity() {
     private lateinit var authViewModel: AuthViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        appComponent?.authComponent()?.create()?.inject(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
 

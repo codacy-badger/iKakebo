@@ -1,27 +1,35 @@
 package eu.mmassi.expensesmanager.ui.main.profile
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
-import dagger.android.support.DaggerFragment
 
 import eu.mmassi.expensesmanager.R
 import eu.mmassi.expensesmanager.di.app.ViewModelProviderFactory
 import eu.mmassi.expensesmanager.models.User
 import eu.mmassi.expensesmanager.models.Resource
+import eu.mmassi.expensesmanager.ui.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_profile.email
 import kotlinx.android.synthetic.main.fragment_profile.username
 import kotlinx.android.synthetic.main.fragment_profile.website
 import javax.inject.Inject
 
-class ProfileFragment : DaggerFragment() {
+class ProfileFragment : Fragment() {
 
     @Inject
     lateinit var viewModelProviderFactory: ViewModelProviderFactory
 
     private lateinit var profileViewModel: ProfileViewModel
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        (context as MainActivity).mainComponent.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -73,7 +73,6 @@ class ExpensesFragment : Fragment(R.layout.fragment_expenses) {
                 true
             }
             else -> super.onOptionsItemSelected(item)
-
         }
     }
 }

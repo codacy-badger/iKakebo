@@ -2,11 +2,7 @@
 <resources>
 
     <string name="app_name">ExpensesManager</string>
-    <string name="logout">Logout</string>
-    <string name="error">Error</string>
-    <string name="profile">Profile</string>
-    <string name="posts">Posts</string>
-    <string name="user_id">User id</string>
-    <string name="login">Login</string>
+    <string name="amount_euro_format">€ %.2f</string>
+    <string name="delete_all_expenses">Delete all expenses</string>
 
 </resources>

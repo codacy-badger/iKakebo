@@ -33,4 +33,3 @@ class PostsRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 }
-

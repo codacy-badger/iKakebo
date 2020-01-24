@@ -6,13 +6,14 @@ import android.view.MenuItem
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI.*
+import androidx.navigation.ui.NavigationUI.navigateUp
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import eu.mmassi.expensesmanager.BaseActivity
 import eu.mmassi.expensesmanager.R
 import eu.mmassi.expensesmanager.appComponent
-import eu.mmassi.expensesmanager.di.app.MainComponent
 import eu.mmassi.expensesmanager.di.app.ViewModelProviderFactory
+import eu.mmassi.expensesmanager.di.main.MainComponent
 import kotlinx.android.synthetic.main.activity_main.drawer_layout
 import kotlinx.android.synthetic.main.activity_main.nav_view
 import javax.inject.Inject

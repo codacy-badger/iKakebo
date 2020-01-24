@@ -34,7 +34,7 @@ class AuthActivity : AppCompatActivity() {
     private lateinit var authViewModel: AuthViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        appComponent?.authComponent()?.create()?.inject(this)
+        appComponent.authComponent().create().inject(this)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)

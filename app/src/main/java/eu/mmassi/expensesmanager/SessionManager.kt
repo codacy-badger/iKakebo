@@ -2,8 +2,8 @@ package eu.mmassi.expensesmanager
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import eu.mmassi.expensesmanager.models.User
 import eu.mmassi.expensesmanager.models.Resource
+import eu.mmassi.expensesmanager.models.User
 import eu.mmassi.expensesmanager.ui.auth.AuthState
 import javax.inject.Inject
 import javax.inject.Singleton

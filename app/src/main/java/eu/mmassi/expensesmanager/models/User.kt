@@ -1,6 +1,6 @@
 package eu.mmassi.expensesmanager.models
 
-data class User (
+data class User(
     val id: Int,
     val username: String,
     val email: String,

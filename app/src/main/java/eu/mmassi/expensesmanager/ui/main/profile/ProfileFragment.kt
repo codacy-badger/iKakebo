@@ -7,11 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
-
 import eu.mmassi.expensesmanager.R
 import eu.mmassi.expensesmanager.di.app.ViewModelProviderFactory
-import eu.mmassi.expensesmanager.models.User
 import eu.mmassi.expensesmanager.models.Resource
+import eu.mmassi.expensesmanager.models.User
 import eu.mmassi.expensesmanager.ui.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_profile.email
 import kotlinx.android.synthetic.main.fragment_profile.username
@@ -32,7 +31,8 @@ class ProfileFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_profile, container, false)

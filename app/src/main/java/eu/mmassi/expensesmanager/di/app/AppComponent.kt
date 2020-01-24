@@ -23,7 +23,6 @@ interface AppComponent {
         fun bindApplication(application: Application): Builder
 
         fun build(): AppComponent
-
     }
 
     val sessionManager: SessionManager

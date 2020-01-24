@@ -3,8 +3,8 @@ package eu.mmassi.expensesmanager.ui.main.profile
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import eu.mmassi.expensesmanager.SessionManager
-import eu.mmassi.expensesmanager.models.User
 import eu.mmassi.expensesmanager.models.Resource
+import eu.mmassi.expensesmanager.models.User
 import eu.mmassi.expensesmanager.ui.auth.AuthState
 import javax.inject.Inject
 

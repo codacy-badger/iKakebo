@@ -1,6 +1,6 @@
 package eu.mmassi.expensesmanager.models
 
-data class Post (
+data class Post(
     val id: Int,
     val userId: Int,
     val title: String,

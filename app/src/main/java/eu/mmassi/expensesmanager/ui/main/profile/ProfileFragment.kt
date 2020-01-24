@@ -12,10 +12,10 @@ import eu.mmassi.expensesmanager.di.app.ViewModelProviderFactory
 import eu.mmassi.expensesmanager.models.Resource
 import eu.mmassi.expensesmanager.models.User
 import eu.mmassi.expensesmanager.ui.main.MainActivity
+import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_profile.email
 import kotlinx.android.synthetic.main.fragment_profile.username
 import kotlinx.android.synthetic.main.fragment_profile.website
-import javax.inject.Inject
 
 class ProfileFragment : Fragment() {
 

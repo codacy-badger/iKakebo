@@ -6,8 +6,8 @@ import androidx.lifecycle.viewModelScope
 import eu.mmassi.expensesmanager.SessionManager
 import eu.mmassi.expensesmanager.models.Resource
 import eu.mmassi.expensesmanager.network.auth.AuthApi
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 class AuthViewModel @Inject constructor(
     private val authApi: AuthApi,

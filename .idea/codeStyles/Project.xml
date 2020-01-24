@@ -4,29 +4,10 @@
       <option name="ARRANGEMENT_SETTINGS_MIGRATED_TO_191" value="true" />
     </AndroidXmlCodeStyleSettings>
     <JavaCodeStyleSettings>
+      <option name="LAYOUT_STATIC_IMPORTS_SEPARATELY" value="false" />
       <option name="IMPORT_LAYOUT_TABLE">
         <value>
-          <package name="android" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="androidx" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="com" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="junit" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="net" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="org" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="java" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="javax" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="import kotlinx" withSubpackages="true" static="false" />
-          <emptyLine />
           <package name="" withSubpackages="true" static="false" />
-          <emptyLine />
-          <package name="" withSubpackages="true" static="true" />
           <emptyLine />
         </value>
       </option>

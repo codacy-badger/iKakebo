@@ -13,8 +13,8 @@ import eu.mmassi.expensesmanager.R
 import eu.mmassi.expensesmanager.di.app.ViewModelProviderFactory
 import eu.mmassi.expensesmanager.models.Resource
 import eu.mmassi.expensesmanager.ui.main.MainActivity
-import kotlinx.android.synthetic.main.fragment_posts.recycler_view
 import javax.inject.Inject
+import kotlinx.android.synthetic.main.fragment_posts.recycler_view
 
 class PostsFragment : Fragment() {
 

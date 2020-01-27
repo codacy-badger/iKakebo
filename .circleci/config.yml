@@ -1,11 +1,16 @@
-version: 2
+# CircleCI configuration file (https://circleci.com/docs/2.0/language-android)
+
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.5
 jobs:
   build:
-    working_directory: ~/code
+    working_directory: ~/iKakebo
     docker:
       - image: circleci/android:api-29
     environment:
-      JVM_OPTS: -Xmx3200m
+      GRADLE_OPTS: -Xmx4g -Dorg.gradle.daemon=false
+      JVM_OPTS: -Xmx4g
     steps:
       - checkout
       - restore_cache:

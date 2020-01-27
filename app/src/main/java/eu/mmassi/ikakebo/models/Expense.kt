@@ -1,4 +1,4 @@
-package eu.mmassi.expensesmanager.models
+package eu.mmassi.ikakebo.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

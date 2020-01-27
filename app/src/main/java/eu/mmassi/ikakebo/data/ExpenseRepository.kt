@@ -1,10 +1,10 @@
-package eu.mmassi.expensesmanager.data
+package eu.mmassi.ikakebo.data
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import eu.mmassi.expensesmanager.data.local.LocalExpenseDataSource
-import eu.mmassi.expensesmanager.data.local.room.RoomLocalExpenseDataSource
-import eu.mmassi.expensesmanager.models.Expense
+import eu.mmassi.ikakebo.data.local.LocalExpenseDataSource
+import eu.mmassi.ikakebo.data.local.room.RoomLocalExpenseDataSource
+import eu.mmassi.ikakebo.models.Expense
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope

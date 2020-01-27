@@ -1,45 +1,46 @@
-package eu.mmassi.expensesmanager.ui.expenses
+package eu.mmassi.ikakebo.ui.expenses
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import eu.mmassi.expensesmanager.R
-import eu.mmassi.expensesmanager.models.Expense
-import kotlinx.android.synthetic.main.expense_item.view.amount
-import kotlinx.android.synthetic.main.expense_item.view.description
-import kotlinx.android.synthetic.main.expense_item.view.time
-import kotlinx.android.synthetic.main.expense_item.view.title
-import org.threeten.bp.format.DateTimeFormatter
+import eu.mmassi.ikakebo.databinding.ItemExpenseBinding
+import eu.mmassi.ikakebo.models.Expense
+import kotlinx.android.synthetic.main.item_expense.view.amount
+import kotlinx.android.synthetic.main.item_expense.view.description
+import kotlinx.android.synthetic.main.item_expense.view.time
+import kotlinx.android.synthetic.main.item_expense.view.title
 
 class ExpensesAdapter : ListAdapter<Expense, ExpensesAdapter.ExpenseHolder>(expenseDiffCallback) {
 
     private var listener: OnExpenseClickListener? = null
-    private var formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy/MM/dd")
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        ExpenseHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.expense_item, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExpenseHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = ItemExpenseBinding.inflate(inflater, parent, false)
+        return ExpenseHolder(binding)
+    }
 
     override fun onBindViewHolder(holder: ExpenseHolder, position: Int) = getItem(position).run {
-        holder.amount.text = holder.itemView.context.getString(R.string.amount_euro_format, amount)
-        holder.title.text = title
-        holder.description.text = description
-        holder.time.text = formatter.format(time)
+        holder.bind(this)
     }
 
     fun getExpenseAt(position: Int): Expense = getItem(position)
 
-    inner class ExpenseHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ExpenseHolder(private val binding: ItemExpenseBinding) : RecyclerView.ViewHolder(binding.root) {
 
         init {
             itemView.setOnClickListener {
                 adapterPosition.takeIf { it != RecyclerView.NO_POSITION }
                     ?.let { listener?.onExpenseClick(getItem(it)) }
             }
+        }
+
+        fun bind(expense: Expense) {
+            binding.expense = expense
+            binding.executePendingBindings()
         }
 
         val amount: TextView = itemView.amount

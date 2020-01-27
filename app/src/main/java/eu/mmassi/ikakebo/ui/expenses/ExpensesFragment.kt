@@ -1,4 +1,4 @@
-package eu.mmassi.expensesmanager.ui.expenses
+package eu.mmassi.ikakebo.ui.expenses
 
 import android.os.Bundle
 import android.view.Menu
@@ -8,11 +8,15 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.ItemTouchHelper.LEFT
+import androidx.recyclerview.widget.ItemTouchHelper.RIGHT
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import eu.mmassi.expensesmanager.R
-import eu.mmassi.expensesmanager.models.Expense
+import eu.mmassi.ikakebo.R
+import eu.mmassi.ikakebo.models.Expense
+import kotlinx.android.synthetic.main.fragment_expenses.add_expense
 import kotlinx.android.synthetic.main.fragment_expenses.expenses
 
 class ExpensesFragment : Fragment(R.layout.fragment_expenses) {
@@ -28,6 +32,29 @@ class ExpensesFragment : Fragment(R.layout.fragment_expenses) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupRecyclerView()
+
+        add_expense.setOnClickListener {
+            findNavController().navigate(
+                ExpensesFragmentDirections.actionExpensesFragmentToAddEditExpenseFragment())
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.expenses_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) =
+        when (item.itemId) {
+            R.id.delete_all_expenses -> {
+                expenseViewModel.deleteExpenses()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+
+    private fun setupRecyclerView() {
         expenses.layoutManager = LinearLayoutManager(activity)
         expenses.setHasFixedSize(true)
 
@@ -40,7 +67,8 @@ class ExpensesFragment : Fragment(R.layout.fragment_expenses) {
             adapter.submitList(it)
         }
 
-        ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT.or(ItemTouchHelper.RIGHT)) {
+        ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, LEFT.or(RIGHT)) {
+
             override fun onMove(
                 recyclerView: RecyclerView,
                 viewHolder: RecyclerView.ViewHolder,
@@ -52,27 +80,14 @@ class ExpensesFragment : Fragment(R.layout.fragment_expenses) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 expenseViewModel.delete(adapter.getExpenseAt(viewHolder.adapterPosition))
             }
-        }
-        ).attachToRecyclerView(expenses)
+        }).attachToRecyclerView(expenses)
 
         adapter.setOnExpenseClickListener(object : ExpensesAdapter.OnExpenseClickListener {
             override fun onExpenseClick(expense: Expense) {
+                findNavController().navigate(
+                    ExpensesFragmentDirections
+                    .actionExpensesFragmentToAddEditExpenseFragment(expense.id))
             }
         })
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.delete_all_expenses -> {
-                expenseViewModel.deleteExpenses()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 }

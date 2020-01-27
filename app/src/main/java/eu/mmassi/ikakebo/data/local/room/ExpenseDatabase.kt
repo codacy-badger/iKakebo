@@ -1,4 +1,4 @@
-package eu.mmassi.expensesmanager.data.local.room
+package eu.mmassi.ikakebo.data.local.room
 
 import android.content.Context
 import androidx.room.Database
@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
-import eu.mmassi.expensesmanager.models.Expense
+import eu.mmassi.ikakebo.models.Expense
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -47,6 +47,9 @@ abstract class ExpenseDatabase : RoomDatabase() {
                     expenseDao.insert(Expense("title 2", "description 2", 2.0, ZonedDateTime.now()))
                     expenseDao.insert(Expense("title 3", "description 3", 3.0, ZonedDateTime.now()))
                     expenseDao.insert(Expense("title 4", "description 4", 4.0, ZonedDateTime.now()))
+                    expenseDao.insert(Expense("Very very very very very very very very long title",
+                        "Very very very very very very very very very very long description",
+                        123.45, ZonedDateTime.now()))
                 }
             }
         }

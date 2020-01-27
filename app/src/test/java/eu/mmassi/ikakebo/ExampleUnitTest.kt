@@ -1,4 +1,4 @@
-package eu.mmassi.expensesmanager
+package eu.mmassi.ikakebo
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

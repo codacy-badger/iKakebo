@@ -1,4 +1,4 @@
-package eu.mmassi.expensesmanager.data.local.room
+package eu.mmassi.ikakebo.data.local.room
 
 import androidx.room.TypeConverter
 import org.threeten.bp.ZonedDateTime

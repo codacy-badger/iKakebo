@@ -1,4 +1,4 @@
-package eu.mmassi.expensesmanager
+package eu.mmassi.ikakebo
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -12,6 +12,6 @@ class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("eu.mmassi.expensesmanager", appContext.packageName)
+        assertEquals("eu.mmassi.ikakebo", appContext.packageName)
     }
 }

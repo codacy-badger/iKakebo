@@ -1,4 +1,4 @@
-package eu.mmassi.expensesmanager.data.local.room
+package eu.mmassi.ikakebo.data.local.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -7,7 +7,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import eu.mmassi.expensesmanager.models.Expense
+import eu.mmassi.ikakebo.models.Expense
 
 @Dao
 interface ExpenseDao {

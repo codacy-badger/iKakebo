@@ -1,9 +1,9 @@
-package eu.mmassi.expensesmanager
+package eu.mmassi.ikakebo
 
 import android.app.Application
 import com.jakewharton.threetenabp.AndroidThreeTen
 
-class ExpensesManagerApplication : Application() {
+class IKakeboApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

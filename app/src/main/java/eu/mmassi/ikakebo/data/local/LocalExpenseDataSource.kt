@@ -1,7 +1,7 @@
-package eu.mmassi.expensesmanager.data.local
+package eu.mmassi.ikakebo.data.local
 
 import androidx.lifecycle.LiveData
-import eu.mmassi.expensesmanager.models.Expense
+import eu.mmassi.ikakebo.models.Expense
 
 interface LocalExpenseDataSource {
 

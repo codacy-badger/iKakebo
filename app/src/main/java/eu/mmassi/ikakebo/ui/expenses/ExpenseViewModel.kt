@@ -1,11 +1,11 @@
-package eu.mmassi.expensesmanager.ui.expenses
+package eu.mmassi.ikakebo.ui.expenses
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import eu.mmassi.expensesmanager.data.ExpenseRepository
-import eu.mmassi.expensesmanager.models.Expense
+import eu.mmassi.ikakebo.data.ExpenseRepository
+import eu.mmassi.ikakebo.models.Expense
 import kotlinx.coroutines.launch
 
 class ExpenseViewModel(application: Application) : AndroidViewModel(application) {

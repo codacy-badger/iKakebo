@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/expensesFragment">
+
+    <fragment
+        android:id="@+id/expensesFragment"
+        android:name="eu.mmassi.ikakebo.ui.expenses.ExpensesFragment">
+        <action
+            android:id="@+id/action_expensesFragment_to_addEditExpenseFragment"
+            app:destination="@id/addEditExpenseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditExpenseFragment"
+        android:name="eu.mmassi.ikakebo.ui.addeditexpense.AddEditExpenseFragment"
+        tools:layout="@layout/add_edit_expense_fragment" >
+        <argument
+            android:name="expenseId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+</navigation>
